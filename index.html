@@ -684,8 +684,8 @@ function enviar(){
   const tp=document.getElementById('f-tipo').value;
   const m=document.getElementById('f-msg').value.trim();
   if(!n||!t||!tp){alert('Por favor, preencha Nome, WhatsApp e Tipo de produto.');return}
-  const txt=encodeURIComponent(`Olá, Magali! 👋\n\nNome: ${n}\nWhatsApp: ${t}${e?'\nEmail: '+e:''}\nProduto: ${tp}${m?'\n\n'+m:''}\n\nAguardo seu retorno! 😊`);
-  window.open('https://wa.me/5511999999999?text='+txt,'_blank');
+  const txt=encodeURIComponent(`Olá, Magali! \n\nNome: ${n}\nWhatsApp: ${t}${e?'\nEmail: '+e:''}\nProduto: ${tp}${m?'\n\n'+m:''}\n\nAguardo seu retorno!`);
+  window.open('https://wa.me/5511919674733?text='+txt,'_blank');
   const toast=document.getElementById('toast');
   toast.classList.add('show');
   setTimeout(()=>toast.classList.remove('show'),3000);
@@ -705,6 +705,25 @@ window.addEventListener('scroll',()=>{
 </script>
 <script id="ano-script">
   document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+<script>
+  const telInput = document.getElementById("f-tel");
+
+  telInput.addEventListener("input", function(e) {
+    let valor = e.target.value.replace(/\D/g, "");
+
+    if (valor.length > 11) valor = valor.slice(0, 11);
+
+    if (valor.length > 6) {
+      valor = valor.replace(/^(\d{2})(\d{5})(\d{0,4})$/, "($1) $2-$3");
+    } else if (valor.length > 2) {
+      valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+    } else {
+      valor = valor.replace(/^(\d*)$/, "($1");
+    }
+
+    e.target.value = valor;
+  });
 </script>
 </body>
 </html>
