@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/favicon.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/favicon.png" sizes="16x16" type="image/png">
+<title>Magali Artes – Personalizados</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rosa:#E8195A;
+  --rosa-claro:#FFF0F5;
+  --amarelo:#F5C842;
+  --amarelo-claro:#FFFBEA;
+  --roxo:#9B5FC0;
+  --roxo-claro:#F7F0FF;
+  --laranja:#F47B20;
+  --verde:#4DBD74;
+  --azul:#5BB8F5;
+  --branco:#FFFFFF;
+  --creme:#FFFDF8;
+  --texto:#2D1A0E;
+  --texto-medio:#6B4226;
+  --borda-pontilhada: 3px dashed;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Baloo 2',cursive;color:var(--texto);background:var(--creme);overflow-x:hidden;cursor:default}
+
+/* padrão de fundo pontilhado */
+body::before{
+  content:'';position:fixed;inset:0;z-index:-1;
+  background-image:radial-gradient(circle,#ddd 1px,transparent 1px);
+  background-size:28px 28px;
+  opacity:.35;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(255,253,248,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:3px dashed var(--amarelo);
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+}
+.nav-logo{
+  height:38px;
+  width:auto;
+}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-weight:700;font-size:.9rem;
+  color:var(--texto-medio);
+  position:relative;transition:color .2s;
+  padding-bottom:2px;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:var(--rosa);border-radius:2px;transition:width .25s;
+}
+.nav-links a:hover{color:var(--rosa)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--rosa);color:white;
+  padding:9px 22px;border-radius:50px;
+  font-weight:800;font-size:.88rem;
+  text-decoration:none;
+  box-shadow:4px 4px 0 #A5082F;
+  transition:transform .15s,box-shadow .15s;
+  letter-spacing:.3px;
+}
+.nav-cta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #A5082F}
+.nav-cta:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #A5082F}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(160deg,#FFF0F5 0%,#FFFBEA 40%,#F7F0FF 100%);
+  display:flex;align-items:center;justify-content:center;
+  padding:90px 2rem 4rem;
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+/* decorações geométricas do hero */
+.hero-shape{position:absolute;pointer-events:none}
+.hs1{top:10%;left:5%;width:80px;height:80px;background:var(--amarelo);border-radius:50%;opacity:.5;animation:boing 3s ease-in-out infinite}
+.hs2{top:15%;right:8%;width:60px;height:60px;background:var(--rosa);transform:rotate(20deg);opacity:.45;animation:boing 3.5s ease-in-out infinite .5s}
+.hs3{bottom:12%;left:8%;width:50px;height:50px;background:var(--verde);border-radius:50%;opacity:.4;animation:boing 4s ease-in-out infinite 1s}
+.hs4{bottom:18%;right:6%;width:70px;height:70px;background:var(--roxo);transform:rotate(45deg);opacity:.35;animation:boing 3.2s ease-in-out infinite .8s}
+.hs5{top:40%;left:2%;width:40px;height:40px;background:var(--laranja);border-radius:8px;opacity:.4;animation:boing 2.8s ease-in-out infinite .3s}
+@keyframes boing{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.15) rotate(8deg)}}
+
+.hero-inner{position:relative;max-width:800px}
+.hero-logo{
+  max-height:120px;   /* controla pela altura */
+  width:auto;         /* mantém proporção */
+  display:block;
+  margin:0 auto 1.5rem;
+}
+.hero-tagline{
+  font-family:'Caveat',cursive;
+  font-size:clamp(1rem,2.5vw,1.5rem) !important;
+  color:var(--texto-medio);margin-bottom:.5rem;
+}
+.hero h1{
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:800;line-height:1.15;
+  color:var(--texto);margin-bottom:1.2rem;
+}
+.hero h1 .c-rosa{color:var(--rosa)}
+.hero h1 .c-roxo{color:var(--roxo)}
+.hero p{
+  font-size:1.1rem;color:var(--texto-medio);
+  line-height:1.7;max-width:520px;margin:0 auto 2.2rem;
+}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-rosa{
+  background:var(--rosa);color:white;
+  padding:13px 30px;border-radius:14px;
+  font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;
+  text-decoration:none;
+  box-shadow:4px 4px 0 #A5082F;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-rosa:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #A5082F}
+.btn-branco{
+  background:white;color:var(--roxo);
+  border:2.5px solid var(--roxo);
+  padding:13px 30px;border-radius:14px;
+  font-family:'Baloo 2',cursive;font-weight:800;font-size:1rem;
+  text-decoration:none;
+  box-shadow:4px 4px 0 #6B3A8F;
+  transition:transform .15s,box-shadow .15s;
+}
+.btn-branco:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #6B3A8F;background:var(--roxo-claro)}
+
+.chips{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem}
+.chip{
+  background:white;border-radius:50px;
+  padding:8px 18px;
+  font-weight:700;font-size:.88rem;
+  box-shadow:3px 3px 0 rgba(0,0,0,.1);
+  border:2px solid transparent;
+}
+.chip-rosa{border-color:var(--rosa);color:var(--rosa)}
+.chip-amarelo{border-color:var(--amarelo);color:#A07A00}
+.chip-roxo{border-color:var(--roxo);color:var(--roxo)}
+.chip-verde{border-color:var(--verde);color:#1E7A40}
+.chip-azul{border-color:var(--azul);color:#1A6AA0}
+
+/* ── SECTIONS ── */
+section{padding:5.5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.sec-label{
+  font-family:'Caveat',cursive;
+  font-size:1.5rem;font-weight:700;
+  color:var(--rosa);margin-bottom:.4rem;
+}
+.sec-title{
+  font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;line-height:1.15;color:var(--texto);
+  margin-bottom:.75rem;
+}
+.sec-sub{
+  font-size:1rem;color:var(--texto-medio);
+  line-height:1.7;max-width:520px;margin:0 auto 3rem;
+  white-space: nowrap;
+  display: inline-block;
+  width: fit-content;
+}
+.center{text-align:center}
+
+/* ── PRODUTOS ── */
+.produtos{background:white}
+.produtos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1.5rem;
+}
+.prod-card{
+  border-radius:20px;padding:2rem 1.5rem;
+  border:2.5px solid;
+  transition:transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.prod-card::before{
+  content:'';position:absolute;bottom:-20px;right:-20px;
+  width:80px;height:80px;border-radius:50%;opacity:.15;
+  background:currentColor;
+}
+.prod-card:hover{transform:translate(-3px,-3px)}
+.pc-rosa{border-color:var(--rosa);background:#FFF5F8;color:var(--rosa)}
+.pc-rosa:hover{box-shadow:6px 6px 0 var(--rosa)}
+.pc-amarelo{border-color:var(--amarelo);background:#FFFBEA;color:#A07A00}
+.pc-amarelo:hover{box-shadow:6px 6px 0 var(--amarelo)}
+.pc-roxo{border-color:var(--roxo);background:#F9F4FF;color:var(--roxo)}
+.pc-roxo:hover{box-shadow:6px 6px 0 var(--roxo)}
+.pc-verde{border-color:var(--verde);background:#F2FFF7;color:#1E7A40}
+.pc-verde:hover{box-shadow:6px 6px 0 var(--verde)}
+.pc-laranja{border-color:var(--laranja);background:#FFF5EE;color:var(--laranja)}
+.pc-laranja:hover{box-shadow:6px 6px 0 var(--laranja)}
+.pc-azul{border-color:var(--azul);background:#F0F9FF;color:#1A6AA0}
+.pc-azul:hover{box-shadow:6px 6px 0 var(--azul)}
+
+.prod-emoji{font-size:2.4rem;margin-bottom:.75rem;display:block}
+.prod-card h3{font-size:1.1rem;font-weight:800;color:var(--texto);margin-bottom:.5rem}
+.prod-card p{font-size:.88rem;color:var(--texto-medio);line-height:1.6}
+
+/* ── PORTFÓLIO ── */
+.portfolio{background:var(--creme)}
+.filtros{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.filtro{
+  padding:8px 20px;border-radius:50px;
+  border:2.5px solid #ddd;
+  background:white;color:var(--texto-medio);
+  font-family:'Baloo 2',cursive;font-weight:700;font-size:.85rem;
+  cursor:pointer;transition:all .2s;
+}
+.filtro.ativo,.filtro:hover{
+  background:var(--rosa);color:white;border-color:var(--rosa);
+  box-shadow:3px 3px 0 #A5082F;
+}
+.port-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:1.25rem;
+}
+.port-item{
+  border-radius:18px;overflow:hidden;
+  aspect-ratio:4/3;position:relative;
+  cursor:pointer;
+  border:2.5px solid white;
+  box-shadow:4px 4px 0 rgba(0,0,0,.1);
+  transition:transform .25s,box-shadow .25s;
+}
+.port-item:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 rgba(0,0,0,.15)}
+.port-bg{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.6rem;
+}
+.port-em{font-size:2.8rem;filter:drop-shadow(2px 2px 0 rgba(0,0,0,.2))}
+.port-txt{font-weight:800;font-size:.95rem;color:white;text-align:center;
+  padding:0 .75rem;text-shadow:1px 1px 3px rgba(0,0,0,.3)}
+.port-overlay{
+  position:absolute;inset:0;
+  background:rgba(45,26,14,.55);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .3s;border-radius:16px;
+}
+.port-item:hover .port-overlay{opacity:1}
+.port-overlay span{
+  color:white;font-weight:800;font-size:.95rem;
+  background:rgba(255,255,255,.2);
+  padding:10px 22px;border-radius:50px;
+  border:2px solid rgba(255,255,255,.6);
+}
+
+/* ── COMO FUNCIONA ── */
+.como{background:white}
+.passos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.5rem;
+  counter-reset:passos;
+}
+.passo{
+  text-align:center;padding:2rem 1.5rem;
+  border-radius:20px;
+  border:2.5px dashed var(--amarelo);
+  background:var(--amarelo-claro);
+  position:relative;
+}
+.passo-num{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--amarelo);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.3rem;color:white;
+  margin:0 auto 1rem;
+  box-shadow:3px 3px 0 rgba(160,122,0,.4);
+}
+.passo h4{font-size:1rem;font-weight:800;color:var(--texto);margin-bottom:.4rem}
+.passo p{font-size:.85rem;color:var(--texto-medio);line-height:1.5}
+
+/* ── DEPOIMENTOS ── */
+.depos{background:var(--creme)}
+.depos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+.depo{
+  background:white;border-radius:20px;
+  padding:1.75rem;
+  border:2.5px solid;
+  box-shadow:5px 5px 0;
+}
+.d1{border-color:var(--rosa);box-shadow-color:var(--rosa)/* unsupported – set below */}
+.d1{box-shadow:5px 5px 0 #f7aac6}
+.d2{border-color:var(--roxo);box-shadow:5px 5px 0 #cbaae8}
+.d3{border-color:var(--amarelo);box-shadow:5px 5px 0 #f5e48a}
+.stars{font-size:1.1rem;color:var(--amarelo);letter-spacing:2px;margin-bottom:.75rem}
+.depo-txt{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--texto);
+  line-height:1.6;margin-bottom:1.2rem}
+.depo-autor{display:flex;align-items:center;gap:.75rem}
+.ava{
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.9rem;color:white;
+  flex-shrink:0;
+}
+.depo-nome{font-weight:800;font-size:.9rem}
+.depo-desc{font-size:.78rem;color:var(--texto-medio)}
+
+/* ── CONTATO ── */
+.contato{
+  background:linear-gradient(135deg,#FFF0F5 0%,#F7F0FF 100%);
+}
+.contato-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:4rem;align-items:start;
+}
+@media(max-width:760px){
+  .contato-grid{grid-template-columns:1fr;gap:2.5rem}
+  .nav-links{display:none}
+  .passos{grid-template-columns:1fr 1fr}
+}
+.contato-info .sec-title{text-align:left}
+.contato-info p{color:var(--texto-medio);line-height:1.7;margin-bottom:2rem}
+.clinks{display:flex;flex-direction:column;gap:.8rem}
+.clink{
+  display:flex;align-items:center;gap:.75rem;
+  text-decoration:none;color:var(--texto);
+  font-weight:700;font-size:.95rem;
+  padding:10px 14px;border-radius:14px;
+  background:white;
+  border:2px solid transparent;
+  transition:border-color .2s,transform .15s;
+  box-shadow:3px 3px 0 rgba(0,0,0,.06);
+}
+.clink:hover{border-color:var(--rosa);transform:translate(-2px,-2px)}
+.clink-ico{font-size:1.3rem;width:36px;text-align:center}
+
+.form-box{
+  background:white;border-radius:24px;
+  padding:2.25rem;
+  border:2.5px solid var(--rosa);
+  box-shadow:6px 6px 0 #f7aac6;
+}
+.form-box h3{
+  font-size:1.4rem;font-weight:800;
+  color:var(--texto);margin-bottom:1.5rem;
+}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-weight:700;font-size:.82rem;
+  color:var(--texto-medio);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:11px 14px;
+  border:2px solid #F9C8DA;border-radius:12px;
+  font-family:'Baloo 2',cursive;font-size:.93rem;color:var(--texto);
+  background:white;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--rosa);
+  box-shadow:0 0 0 3px rgba(232,25,90,.12);
+}
+.fg textarea{resize:vertical;min-height:100px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-btn{
+  width:100%;background:var(--rosa);color:white;border:none;
+  padding:13px;border-radius:14px;
+  font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;
+  cursor:pointer;
+  box-shadow:4px 4px 0 #A5082F;
+  transition:transform .15s,box-shadow .15s;
+  margin-top:.35rem;
+}
+.form-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #A5082F}
+.form-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #A5082F}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--texto);color:rgba(255,255,255,.65);
+  text-align:center;padding:2.5rem 2rem;
+}
+.footer-logo{
+  height:38px;
+  width:auto;
+}
+footer p{font-size:.85rem;margin-top:.4rem}
+footer a{color:var(--amarelo);text-decoration:none}
+
+/* ── WHATSAPP ── */
+.wa-btn{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:300;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.8rem;text-decoration:none;
+  box-shadow:4px 4px 0 #128C4E;
+  animation:wapulse 2.5s ease-in-out infinite;
+}
+@keyframes wapulse{0%,100%{box-shadow:4px 4px 0 #128C4E}50%{box-shadow:4px 4px 0 #128C4E,0 0 0 8px rgba(37,211,102,.2)}}
+
+/* ── TOAST ── */
+#toast{
+  position:fixed;bottom:5.5rem;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  background:var(--texto);color:white;
+  padding:12px 26px;border-radius:50px;
+  font-weight:700;font-size:.9rem;
+  opacity:0;pointer-events:none;transition:all .3s;z-index:400;
+  border:2px solid var(--amarelo);
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio"><img class="nav-logo" src="images/logo_semfundo_comborda.png">
+    <ul class="nav-links">
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#como">Como Funciona</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">✉️ Solicitar Orçamento</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-shape hs1"></div>
+  <div class="hero-shape hs2"></div>
+  <div class="hero-shape hs3"></div>
+  <div class="hero-shape hs4"></div>
+  <div class="hero-shape hs5"></div>
+  
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+  <div class="container center">
+    <h2 class="sec-title">Nossos Produtos</h2>
+    <p class="sec-sub">Tudo feito à mão com materiais de qualidade — <br>personalizados do jeito que você imaginar!</p>
+    <div class="produtos-grid">
+      <div class="prod-card pc-rosa">
+        <span class="prod-emoji">🎉</span>
+        <h3>Decoração de Festas</h3>
+        <p>Toppers, bandeirinhas, painéis 3D, chapéus, tags e kits completos para qualquer tema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="contato-grid">
+      <div class="contato-info">
+        <p class="sec-label">📩 Fale com a Magali Artes</p>
+        <h2 class="sec-title" style="text-align:left">Vamos criar algo<br><em style="color:var(--rosa);font-style:normal">incrível juntos?</em></h2>
+        <p>Manda uma mensagem com a sua ideia! Adoro transformar sonhos em papel — seja para festas, presentes ou lembranças especiais.</p>
+        <div class="clinks">
+          <a class="clink" href="https://wa.me/5511919674733" target="_blank">
+            <span class="clink-ico">💬</span>
+            <span>(11) 91967-4733 — WhatsApp</span>
+          </a>
+          <a class="clink" href="mailto:magaliartesanatos@gmail.com">
+            <span class="clink-ico">✉️</span>
+            <span>magaliartesanatos@gmail.com</span>
+          </a>
+          <a class="clink" href="https://instagram.com/magali.artes" target="_blank">
+            <span class="clink-ico">📸</span>
+            <span>@magali.artes — Instagram</span>
+          </a>
+        </div>
+      </div>
+      <div class="form-box">
+        <h3>Solicite seu Orçamento 🎨</h3>
+        <div class="fr">
+          <div class="fg"><label>Nome</label><input type="text" placeholder="Seu nome" id="f-nome"></div>
+          <div class="fg"><label>WhatsApp</label><input type="tel" placeholder="(00) 00000-0000" required pattern="\(\d{2}\)\s\d{5}-\d{4}" id="f-tel"></div>
+        </div>
+        <div class="fg"><label>E-mail</label><input type="email" placeholder="seu@email.com" id="f-email"></div>
+        <div class="fg">
+          <label>Tipo de produto</label>
+          <select id="f-tipo">
+            <option value="">Selecione...</option>
+            <option>Decoração de festa infantil</option>
+            <option>Agenda ou planner personalizado</option>
+            <option>Caixinhas e embalagens</option>
+            <option>Decoração de Natal</option>
+            <option>Dia das Mães / Namorados</option>
+            <option>Gravação em madeira</option>
+            <option>Letras 3D decoradas</option>
+            <option>Outro (vou descrever abaixo)</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Conta sobre o seu projeto ✨</label>
+          <textarea id="f-msg" placeholder="Tema, cores, quantidade, data que precisa..."></textarea>
+        </div>
+        <button class="form-btn" onclick="enviar()">Enviar no WhatsApp 💌</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img class="footer-logo" src="images/logo_semfundo_comborda.png">
+    <p>Produtos artesanais e personalizados feitos em papel ✂️💕</p>
+  <p style="margin-top:.75rem">© <span id="ano"></span> Magali Artes · Feito com muito amor<br>
+    <a href="https://instagram.com/magali.artes" target="_blank">@magali.artes</a>
+  </p>
+</footer>
+
+<a class="wa-btn" href="https://wa.me/5511919674733" target="_blank" title="WhatsApp">💬</a>
+<div id="toast">Abrindo WhatsApp... 💌</div>
+
+<script>
+const PORTFOLIO = [
+  {cat:'festa',em:'🚛',txt:'Festa Construção – Davi',bg:'linear-gradient(135deg,#F59E0B,#B45309)'},
+  {cat:'festa',em:'🎂',txt:'Toppers & Chapéus Personalizados',bg:'linear-gradient(135deg,#EC4899,#9333EA)'},
+  {cat:'festa',em:'🏳️',txt:'Bandeirinha Viva Theo!',bg:'linear-gradient(135deg,#6EE7B7,#3B82F6)'},
+  {cat:'festa',em:'🦁',txt:'Kit Festa Safari',bg:'linear-gradient(135deg,#FCA5A5,#F97316)'},
+  {cat:'agenda',em:'📗',txt:'Agenda 2025 Gradiente',bg:'linear-gradient(135deg,#A855F7,#EC4899,#F97316)'},
+  {cat:'agenda',em:'🌸',txt:'Planner Floral',bg:'linear-gradient(135deg,#FDE68A,#F9A8D4)'},
+  {cat:'natal',em:'🎅',txt:'Papai Noel 3D em Papel',bg:'linear-gradient(135deg,#EF4444,#065F46)'},
+  {cat:'natal',em:'🦌',txt:'Kit Natal Renas & Trenó',bg:'linear-gradient(135deg,#B91C1C,#A16207)'},
+  {cat:'especial',em:'🌺',txt:'Vasinho Dia das Mães',bg:'linear-gradient(135deg,#F472B6,#34D399)'},
+  {cat:'especial',em:'🎁',txt:'Caixinha Ferrero Rocher',bg:'linear-gradient(135deg,#EF4444,#B91C1C)'},
+  {cat:'especial',em:'🔟',txt:'Letra 70 Anos Decorada',bg:'linear-gradient(135deg,#EF4444,#F9A8D4)'},
+  {cat:'especial',em:'🐕',txt:'Retrato Gravado em Madeira',bg:'linear-gradient(135deg,#D97706,#92400E)'},
+];
+
+function renderPort(cat){
+  const grid=document.getElementById('port-grid');
+  const list=cat==='todos'?PORTFOLIO:PORTFOLIO.filter(i=>i.cat===cat);
+  grid.innerHTML=list.map(i=>`
+    <div class="port-item">
+      <div class="port-bg" style="background:${i.bg}">
+        <span class="port-em">${i.em}</span>
+        <span class="port-txt">${i.txt}</span>
+      </div>
+      <div class="port-overlay"><span>✨ Ver mais</span></div>
+    </div>`).join('');
+}
+function filtrar(btn,cat){
+  document.querySelectorAll('.filtro').forEach(b=>b.classList.remove('ativo'));
+  btn.classList.add('ativo');
+  renderPort(cat);
+}
+renderPort('todos');
+
+function enviar(){
+  const n=document.getElementById('f-nome').value.trim();
+  const t=document.getElementById('f-tel').value.trim();
+  const e=document.getElementById('f-email').value.trim();
+  const tp=document.getElementById('f-tipo').value;
+  const m=document.getElementById('f-msg').value.trim();
+  if(!n||!t||!tp){alert('Por favor, preencha Nome, WhatsApp e Tipo de produto.');return}
+  const txt=encodeURIComponent(`Olá, Magali! \n\nNome: ${n}\nWhatsApp: ${t}${e?'\nEmail: '+e:''}\nProduto: ${tp}${m?'\n\n'+m:''}\n\nAguardo seu retorno!`);
+  window.open('https://wa.me/5511919674733?text='+txt,'_blank');
+  const toast=document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),3000);
+}
+
+// nav active
+const secs=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  secs.forEach(s=>{if(scrollY>=s.offsetTop-80)cur=s.id});
+  links.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+cur;
+    a.style.color=active?'var(--rosa)':'';
+  });
+});
+</script>
+<script id="ano-script">
+  document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+<script>
+  const telInput = document.getElementById("f-tel");
+
+  telInput.addEventListener("input", function(e) {
+    let valor = e.target.value.replace(/\D/g, "");
+
+    if (valor.length > 11) valor = valor.slice(0, 11);
+
+    if (valor.length > 6) {
+      valor = valor.replace(/^(\d{2})(\d{5})(\d{0,4})$/, "($1) $2-$3");
+    } else if (valor.length > 2) {
+      valor = valor.replace(/^(\d{2})(\d{0,5})$/, "($1) $2");
+    } else {
+      valor = valor.replace(/^(\d*)$/, "($1");
+    }
+
+    e.target.value = valor;
+  });
+</script>
+</body>
+</html>
