@@ -243,6 +243,33 @@ section{padding:5.5rem 2rem}
   display:none;
 }
 
+.mini-card.ativo{
+  transform:scale(1.05);
+  box-shadow:0 0 0 3px rgba(0,0,0,.08);
+}
+  
+.categoria-header{
+  text-align:center;
+  margin:3rem auto 2rem;
+  max-width:700px;
+}
+
+.categoria-tag{
+  color:var(--rosa);
+  font-weight:700;
+  margin-bottom:.5rem;
+}
+
+.categoria-header h1{
+  font-size:clamp(2rem,4vw,3rem);
+  margin-bottom:1rem;
+}
+
+.categoria-header p{
+  color:var(--texto-medio);
+  line-height:1.7;
+}
+
 /* ── PORTFÓLIO ── */
 .portfolio{background:var(--creme)}
 .filtros{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -473,7 +500,7 @@ footer a{color:var(--amarelo);text-decoration:none}
   <div class="container center">
     <h2 class="sec-title">Nossos Produtos</h2>
     <div class="mini-grid">
-      <a href="decoracaofesta.html" class="prod-card mini-card pc-rosa">
+      <a href="decoracaofesta.html" class="prod-card mini-card pc-rosa ativo">
         <span class="prod-emoji">🎉</span>
         <h3>Decoração de Festas</h3>
       </a>
@@ -497,6 +524,14 @@ footer a{color:var(--amarelo);text-decoration:none}
         <span class="prod-emoji">🐾</span>
         <h3>Gravação em Madeira</h3>
       </a>
+    </div>
+    <div class="categoria-header">
+      <p class="categoria-tag">🎉 Categoria</p>
+      <h1>Decoração de Festas</h1>
+      <p>
+        Toppers, bandeirinhas, painéis 3D e kits personalizados
+        para deixar sua festa inesquecível.
+      </p>
     </div>
   </div>
 </section>
