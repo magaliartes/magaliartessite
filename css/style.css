@@ -176,6 +176,8 @@ section{padding:5.5rem 2rem}
   border:2.5px solid;
   transition:transform .2s,box-shadow .2s;
   position:relative;overflow:hidden;
+  text-decoration:none;
+  color:inherit;
 }
 .prod-card::before{
   content:'';position:absolute;bottom:-20px;right:-20px;
