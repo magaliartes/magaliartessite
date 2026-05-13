@@ -209,6 +209,35 @@ section{padding:5.5rem 2rem}
 .prod-card h3{font-size:1.1rem;font-weight:800;color:var(--texto);margin-bottom:.5rem}
 .prod-card p{font-size:.88rem;color:var(--texto-medio);line-height:1.6}
 
+.mini-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+  margin-top:2rem;
+}
+
+.mini-card{
+  width:180px;
+  padding:1rem;
+  text-align:center;
+  min-height:auto;
+}
+
+.mini-card .prod-emoji{
+  font-size:1.8rem;
+  margin-bottom:.5rem;
+}
+
+.mini-card h3{
+  font-size:.95rem;
+  margin:0;
+}
+
+.mini-card p{
+  display:none;
+}
+
 /* ── PORTFÓLIO ── */
 .portfolio{background:var(--creme)}
 .filtros{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -435,19 +464,26 @@ footer a{color:var(--amarelo);text-decoration:none}
 </nav>
 
 <!-- PRODUTOS -->
-<section class="produtos" id="produtos">
+<section class="produtos-mini">
   <div class="container center">
     <h2 class="sec-title">Nossos Produtos</h2>
-    <p class="sec-sub">Tudo feito à mão com materiais de qualidade — <br>personalizados do jeito que você imaginar!</p>
-    <div class="produtos-grid">
-      <div class="prod-card pc-rosa">
+    <div class="mini-grid">
+      <a href="decoracaofesta.html" class="prod-card mini-card pc-rosa">
         <span class="prod-emoji">🎉</span>
         <h3>Decoração de Festas</h3>
-        <p>Toppers, bandeirinhas, painéis 3D, chapéus, tags e kits completos para qualquer tema.</p>
-      </div>
+      </a>
+      <a href="agendas.html" class="prod-card mini-card pc-roxo">
+        <span class="prod-emoji">📅</span>
+        <h3>Agendas & Planners</h3>
+      </a>
+      <a href="caixinhas.html" class="prod-card mini-card pc-amarelo">
+        <span class="prod-emoji">📦</span>
+        <h3>Caixinhas</h3>
+      </a>
     </div>
   </div>
 </section>
+
 
 
 
